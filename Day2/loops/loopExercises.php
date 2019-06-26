@@ -55,7 +55,7 @@
     $numbersArray = [];
     for ($i=0; $i < 21 ; $i++) { 
         $numbersArray = $i;
-        echo $numbersArray . '<br>';
+        echo $numbersArray. '<br>';
     };
 
     $arrray = [];
@@ -76,10 +76,12 @@
     echo'<h3>exercise 4</h3>';
 
     $numbersArrayy = [];
+    $multi = 2;
     for ($i=0; $i <11 ; $i++) { 
-        $numbersArrayy = $i*2;
-        echo $numbersArrayy . '<br>';
+        $numbersArrayy[$i] = ($i * $multi);
+       
     };
+    var_dump($numbersArrayy);
 
 
     	/*
@@ -94,10 +96,35 @@
     for ($i=0; $i <11 ; $i++) { 
         $random[] = rand(0,100);
     };
+    var_dump($random);
     echo ' smallest value ' . ' / ' . min($random). '<br>';
+    echo ' greater value ' . ' / ' . max($random);
 
-    echo ' smallest value ' . ' / ' . max($random);
 
+    $random1=[];
+    for ($i=0; $i <11 ; $i++) { 
+        $random1[] = rand(0,100);
+    };
+    
+   
+    $posMax = 0;
+    $posMin = 0;
+    foreach ($random1 as $key => $value) {
+        if ($value > $random1[$posMax]){
+            $posMax = $key;
+
+        }
+         if($value < $random1[$posMax]){
+             $posMin = $key;
+
+         }
+         
+    }
+     var_dump($random1);
+     echo ' smallest value ' . ' / ' .$random1[$posMax] . '<br>';
+     echo ' the positions is ' . ' / ' .$posMax . '<br>';
+     echo ' greater value ' . ' / ' .$random1[$posMin] . '<br>' ;
+     echo ' the postition is  ' . ' / ' . $posMin;
 
 
     ?>
